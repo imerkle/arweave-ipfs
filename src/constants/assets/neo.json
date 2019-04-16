@@ -1,0 +1,386 @@
+{
+    "GAS": {
+        "hash": "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7",
+        "ticker": "GAS",
+        "name": "GAS",
+        "decimals": 8
+    },
+    "ACAT": {
+        "hash": "7f86d61ff377f1b12e589a5907152b57e2ad9a7a",
+        "ticker": "ACAT",
+        "name": "ACAT Token",
+        "decimals": 8
+    },
+    "APH": {
+        "hash": "6d36b38af912ca107f55a5daedc650054f7e4f75",
+        "ticker": "APH",
+        "name": "Aphelion",
+        "decimals": 8
+    },
+    "APT": {
+        "hash": "7cd338644833db2fd8824c410e364890d179e6f8",
+        "ticker": "APT",
+        "name": "APPOSTOKEN",
+        "decimals": 8
+    },
+    "ASA": {
+        "hash": "a58b56b30425d3d1f8902034996fcac4168ef71d",
+        "ticker": "ASA",
+        "name": "Asura World Coin",
+        "decimals": 8
+    },
+    "AVA": {
+        "hash": "de2ed49b691e76754c20fe619d891b78ef58e537",
+        "ticker": "AVA",
+        "name": "Travala",
+        "decimals": 8
+    },
+    "BCS": {
+        "hash": "546c5872a992b2754ef327154f4c119baabff65f",
+        "ticker": "BCS",
+        "name": "Block chain store",
+        "decimals": 8
+    },
+    "BDN": {
+        "hash": "d0394dd3ee1cdd8ae18665a22c7ca3af52aafd7a",
+        "ticker": "BDN",
+        "name": "Business Data Network",
+        "decimals": 6
+    },
+    "CGAS": {
+        "hash": "74f2dc36a68fdc4682034178eb2220729231db76",
+        "ticker": "CGAS",
+        "name": "NEP5 GAS",
+        "decimals": 8
+    },
+    "CGE": {
+        "hash": "34579e4614ac1a7bd295372d3de8621770c76cdc",
+        "ticker": "CGE",
+        "name": "Concierge Token",
+        "decimals": 8
+    },
+    "CGL": {
+        "hash": "cbbe4c3c0d2a3622e9e8d65fe9f6240078f356c9",
+        "ticker": "CGL",
+        "name": "CrazyGladiator",
+        "decimals": 0
+    },
+    "COUP": {
+        "hash": "87d6c2ae68d6a6f411eb72232e75133b2ffc7142",
+        "ticker": "COUP",
+        "name": "Coupit",
+        "decimals": 8
+    },
+    "CPX": {
+        "hash": "45d493a6f73fa5f404244a5fb8472fc014ca5885",
+        "ticker": "CPX",
+        "name": "CPX Token",
+        "decimals": 8
+    },
+    "DAD": {
+        "hash": "bb23c20466c21600b3e38a615c691d15ef251f9c",
+        "ticker": "DAD",
+        "name": "DAD",
+        "decimals": 8
+    },
+    "DBC": {
+        "hash": "b951ecbbc5fe37a9c280a76cb0ce0014827294cf",
+        "ticker": "DBC",
+        "name": "DeepBrain Coin",
+        "decimals": 8
+    },
+    "EDS": {
+        "hash": "81c089ab996fc89c468a26c0a88d23ae2f34b5c0",
+        "ticker": "EDS",
+        "name": "Endorsit Shares",
+        "decimals": 8
+    },
+    "EFX": {
+        "hash": "acbc532904b6b51b5ea6d19b803d78af70e7e6f9",
+        "ticker": "EFX",
+        "name": "Effect.AI Token",
+        "decimals": 8
+    },
+    "EPN": {
+        "hash": "a79cb7b4e85c8b23940d47bb3ddef76a5f13e449",
+        "ticker": "EPN",
+        "name": "Epiphany",
+        "decimals": 8
+    },
+    "EXT": {
+        "hash": "e8f98440ad0d7a6e76d84fb1c3d3f8a16e162e97",
+        "ticker": "EXT",
+        "name": "Experience Token",
+        "decimals": 8
+    },
+    "FTW": {
+        "hash": "11dbc2316f35ea031449387f615d9e4b0cbafe8b",
+        "ticker": "FTW",
+        "name": "For The Win",
+        "decimals": 8
+    },
+    "GALA": {
+        "hash": "9577c3f972d769220d69d1c4ddbd617c44d067aa",
+        "ticker": "GALA",
+        "name": "Galaxy Token",
+        "decimals": 8
+    },
+    "GDM": {
+        "hash": "d1e37547d88bc9607ff9d73116ebd9381c156f79",
+        "ticker": "GDM",
+        "name": "Guardium",
+        "decimals": 8
+    },
+    "GTA": {
+        "hash": "06f4b1235f6300477d56b9a1f1de5b0172dfe103",
+        "ticker": "GTA",
+        "name": "GagaPay network token",
+        "decimals": 8
+    },
+    "GUARD": {
+        "hash": "591f92493cd6dd003470e41376f79a515abc707f",
+        "ticker": "GUARD",
+        "name": "Guardium GUARD",
+        "decimals": 8
+    },
+    "IAM": {
+        "hash": "891daf0e1750a1031ebe23030828ad7781d874d6",
+        "ticker": "IAM",
+        "name": "Bridge Token",
+        "decimals": 8
+    },
+    "JWT": {
+        "hash": "b4cf9f4af5272d209b80ad1a06885e21568a4bfa",
+        "ticker": "JWT",
+        "name": "Jarvis+ World cup 2018 Token",
+        "decimals": 8
+    },
+    "LRN": {
+        "hash": "06fa8be9b6609d963e8fc63977b9f8dc5f10895f",
+        "ticker": "LRN",
+        "name": "Loopring Neo Token",
+        "decimals": 8
+    },
+    "LX": {
+        "hash": "bb3b54ab244b3658155f2db4429fc38ac4cef625",
+        "ticker": "LX",
+        "name": "Moonlight Lux",
+        "decimals": 8
+    },
+    "MCT": {
+        "hash": "a87cc2a513f5d8b4a42432343687c2127c60bc3f",
+        "ticker": "MCT",
+        "name": "Master Contract Token",
+        "decimals": 8
+    },
+    "NEX": {
+        "hash": "3a4acd3647086e7c44398aac0349802e6a171129",
+        "ticker": "NEX",
+        "name": "NEX Token",
+        "decimals": 8
+    },
+    "NKN": {
+        "hash": "c36aee199dbba6c3f439983657558cfb67629599",
+        "ticker": "NKN",
+        "name": "NKN",
+        "decimals": 8
+    },
+    "NNC": {
+        "hash": "fc732edee1efdf968c23c20a9628eaa5a6ccb934",
+        "ticker": "NNC",
+        "name": "NEO Name Credit",
+        "decimals": 2
+    },
+    "NRVE": {
+        "hash": "a721d5893480260bd28ca1f395f2c465d0b5b1c2",
+        "ticker": "NRVE",
+        "name": "Narrative Token",
+        "decimals": 8
+    },
+    "NVL": {
+        "hash": "6c5fa71d1cfb37eb579458af8accd3128e6b1fca",
+        "ticker": "NVL",
+        "name": "Nevula Token",
+        "decimals": 4
+    },
+    "OBT": {
+        "hash": "0e86a40588f715fcaf7acd1812d50af478e6e917",
+        "ticker": "OBT",
+        "name": "Orbis",
+        "decimals": 8
+    },
+    "ONT": {
+        "hash": "ceab719b8baa2310f232ee0d277c061704541cfb",
+        "ticker": "ONT",
+        "name": "Ontology Token",
+        "decimals": 8
+    },
+    "PEGCNY": {
+        "hash": "dc054310dfdb455e58fea2b05d085924708065b8",
+        "ticker": "PEGCNY",
+        "name": "FiatPeg CNY",
+        "decimals": 8
+    },
+    "PEGUSD": {
+        "hash": "ce150fa3ded336886871664e827f16fb70c45ceb",
+        "ticker": "PEGUSD",
+        "name": "FiatPeg USD",
+        "decimals": 8
+    },
+    "PHX": {
+        "hash": "1578103c13e39df15d0d29826d957e85d770d8c9",
+        "ticker": "PHX",
+        "name": "Red Pulse Phoenix Token",
+        "decimals": 8
+    },
+    "PKC": {
+        "hash": "af7c7328eee5a275a3bcaee2bf0cf662b5e739be",
+        "ticker": "PKC",
+        "name": "Pikcio Token",
+        "decimals": 8
+    },
+    "PROQ": {
+        "hash": "2199c8dd506f73afddcbd6146c6271626931f735",
+        "ticker": "PROQ",
+        "name": "Quarteria Token",
+        "decimals": 8
+    },
+    "QLC": {
+        "hash": "0d821bd7b6d53f5c2b40e217c6defc8bbe896cf5",
+        "ticker": "QLC",
+        "name": "Qlink Token",
+        "decimals": 8
+    },
+    "RHT": {
+        "hash": "2328008e6f6c7bd157a342e789389eb034d9cbc4",
+        "ticker": "RHT",
+        "name": "Redeemable HashPuppy Token",
+        "decimals": 0
+    },
+    "RPX": {
+        "hash": "ecc6b20d3ccac1ee9ef109af5a7cdb85706b1df9",
+        "ticker": "RPX",
+        "name": "Red Pulse Token",
+        "decimals": 8
+    },
+    "SCC": {
+        "hash": "323571cfc42a40d48d64832a7da594039fbac76a",
+        "ticker": "SCC",
+        "name": "Stem Cell Coin",
+        "decimals": 8
+    },
+    "SDS": {
+        "hash": "6fad54d8cc692fc808fd97a207836a846c217705",
+        "ticker": "SDS",
+        "name": "Standards",
+        "decimals": 8
+    },
+    "SDT": {
+        "hash": "a4f408df2a1ec2a950ec5fd06d7b9dc5f83b9e73",
+        "ticker": "SDT",
+        "name": "Special Drawing Token",
+        "decimals": 8
+    },
+    "SENNO": {
+        "hash": "d3526b437d65f8c12c902e14320abd440ad1f726",
+        "ticker": "SENNO",
+        "name": "The Senno Token",
+        "decimals": 8
+    },
+    "SGAS": {
+        "hash": "961e628cc93d61bf636dc0443cf0548947a50dbe",
+        "ticker": "SGAS",
+        "name": "NEP5.5 Coin With GAS 1: 1",
+        "decimals": 8
+    },
+    "SGT": {
+        "hash": "02728be64b898d1af733aa7f3f00f33b1b209dae",
+        "ticker": "SGT",
+        "name": "Safeguard Token",
+        "decimals": 8
+    },
+    "SOUL": {
+        "hash": "ed07cffad18f1308db51920d99a2af60ac66a7b3",
+        "ticker": "SOUL",
+        "name": "Phantasma",
+        "decimals": 8
+    },
+    "SPOT": {
+        "hash": "0a91cdc3c5ff89983c79e3c72e1ccd9e5beaa5d5",
+        "ticker": "SPOT",
+        "name": "Spotcoin",
+        "decimals": 8
+    },
+    "SWH": {
+        "hash": "78e6d16b914fe15bc16150aeb11d0c2a8e532bdd",
+        "ticker": "SWH",
+        "name": "Switcheo",
+        "decimals": 8
+    },
+    "SWTH": {
+        "hash": "ab38352559b8b203bde5fddfa0b07d8b2525e132",
+        "ticker": "SWTH",
+        "name": "Switcheo",
+        "decimals": 8
+    },
+    "THOR": {
+        "hash": "67a5086bac196b67d5fd20745b0dc9db4d2930ed",
+        "ticker": "THOR",
+        "name": "Thor Token",
+        "decimals": 8
+    },
+    "TKY": {
+        "hash": "132947096727c84c7f9e076c90f08fec3bc17f18",
+        "ticker": "TKY",
+        "name": "THEKEY Token",
+        "decimals": 8
+    },
+    "TNC": {
+        "hash": "08e8c4400f1af2c20c28e0018f29535eb85d15b6",
+        "ticker": "TNC",
+        "name": "Trinity Network Credit",
+        "decimals": 8
+    },
+    "TOLL": {
+        "hash": "78fd589f7894bf9642b4a573ec0e6957dfd84c48",
+        "ticker": "TOLL",
+        "name": "Bridge Protocol",
+        "decimals": 8
+    },
+    "UTD": {
+        "hash": "8399031038683d2867fbe1ba06fb26965ccd1de0",
+        "ticker": "UTD",
+        "name": "AIRDROP UNITED",
+        "decimals": 8
+    },
+    "WWB": {
+        "hash": "40bb36a54bf28872b6ffdfa7fbc6480900e58448",
+        "ticker": "WWB",
+        "name": "Wowbit",
+        "decimals": 8
+    },
+    "XQT": {
+        "hash": "7ac4a2bb052a047506f2f2d3d1528b89cc38e8d4",
+        "ticker": "XQT",
+        "name": "Quarteria Token",
+        "decimals": 8
+    },
+    "XQTA": {
+        "hash": "6eca2c4bd2b3ed97b2aa41b26128a40ce2bd8d1a",
+        "ticker": "XQTA",
+        "name": "Quarteria Token",
+        "decimals": 8
+    },
+    "YEZ": {
+        "hash": "b0036a6e8cf172146c7e71a3b53912556d5788e3",
+        "ticker": "YEZ",
+        "name": "Yezcoin",
+        "decimals": 8
+    },
+    "ZPT": {
+        "hash": "ac116d4b8d4ca55e6b6d4ecce2192039b51cccc5",
+        "ticker": "ZPT",
+        "name": "Zeepin Token",
+        "decimals": 8
+    }
+}
