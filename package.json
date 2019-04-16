@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' nyc mocha --require ts-node/register __test__/**/*.spec.ts",
     "build": "tsc",
-    "report": "nyc report"
+    "report": "nyc report && codecov"
   },
   "nyc": {
     "check-coverage": true,
@@ -18,7 +18,7 @@
       "src/**/!(*.test.*).[tj]s?(x)"
     ],
     "reporter":[
-      "json",
+      "lcov",
       "text"
     ],
     "lines": 10
