@@ -17,7 +17,7 @@
     "include": [
       "src/**/!(*.test.*).[tj]s?(x)"
     ],
-    "reporter":[
+    "reporter": [
       "lcov",
       "text"
     ],
@@ -40,7 +40,7 @@
     "ripple-keypairs": "^0.11.0",
     "ripple-sign-keypairs": "^1.0.2",
     "stellar-base": "^0.13.0",
-    "thor-devkit": "^0.10.1",
+    "thor-devkit": "https://github.com/imerkle/thor-devkit.js.git",
     "wif": "^2.0.6"
   },
   "peerDependencies": {
