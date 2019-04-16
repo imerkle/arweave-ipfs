@@ -12,10 +12,7 @@
     "check-coverage": true,
     "all": false,
     "extension": [
-      ".js",
-      ".jsx",
-      ".ts",
-      ".tsx"
+      ".ts"
     ],
     "include": [
       "src/**/!(*.test.*).[tj]s?(x)"
