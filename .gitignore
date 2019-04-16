@@ -9,3 +9,4 @@ dist
 .src_manifest.json
 source_strings.json
 coverage
+.nyc_output
