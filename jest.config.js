@@ -3,8 +3,7 @@ module.exports = {
         "<rootDir>",
     ],
     "transform": {
-        "^.+\\.tsx?$": "ts-jest",
-        "^.+\\.jsx?$": "ts-jest"
+        "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     "moduleFileExtensions": [
