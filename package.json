@@ -20,12 +20,7 @@
     "include": [
       "src/**/!(*.test.*).[tj]s?(x)"
     ],
-    "reporter": [
-      "html",
-      "lcov",
-      "text",
-      "text-summary"
-    ]
+    "lines": 10
   },
   "dependencies": {
     "@cityofzion/neon-api": "^4.4.0",
