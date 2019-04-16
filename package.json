@@ -20,6 +20,10 @@
     "include": [
       "src/**/!(*.test.*).[tj]s?(x)"
     ],
+    "reporter":[
+      "json",
+      "text"
+    ],
     "lines": 10
   },
   "dependencies": {
