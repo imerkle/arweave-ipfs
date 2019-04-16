@@ -1,6 +1,6 @@
 
 import { generateSeed, generatePKey } from "../src";
-import { expect } from 'chai';
+//import { expect } from 'chai';
 
 const mnemonic = "connect ritual news sand rapid scale behind swamp damp brief explain ankle";
 const seed_hex = "27a718f64d256afa9d95a1d561f059f8a2488c87b2ff56eaeee1ff8dac465804a54400f70205ee698c1b3e2cad4c5b8117f892878dea6d585c6db7e42ab3dda1";
@@ -76,8 +76,8 @@ const wallets = [
 describe("Mnemonic Preparation", () => {
     it("Seed Generation", async() => {
         const { seed, mnemonic:  _m } = await generateSeed(mnemonic, "");        
-        expect(seed.toString("hex")).to.equal(seed_hex);
-        expect(_m).to.equal(mnemonic);
+        expect(seed.toString("hex")).toEqual(seed_hex);
+        expect(_m).toEqual(mnemonic);
     });    
 });
 describe("Wallet Address Generation", () => {
@@ -85,9 +85,9 @@ describe("Wallet Address Generation", () => {
         it(o.name, async() => {
             const { seed, mnemonic: _m } = await generateSeed(mnemonic, "");
             const k = generatePKey({ rel: o.rel, base: o.base }, seed);
-            expect(k.wif).to.equal(o.wif);
-            expect(k.address).to.equal(o.address);
-            expect(k.publicKey).to.equal(o.public_key);
+            expect(k.wif).toEqual(o.wif);
+            expect(k.address).toEqual(o.address);
+            expect(k.publicKey).toEqual(o.public_key);
         });
     });
 });
