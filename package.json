@@ -10,7 +10,7 @@
   },
   "nyc": {
     "check-coverage": true,
-    "all": true,
+    "all": false,
     "extension": [
       ".js",
       ".jsx",
