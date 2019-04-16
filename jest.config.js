@@ -4,21 +4,17 @@ module.exports = {
     ],
     "transform": {
         "^.+\\.tsx?$": "ts-jest",
+        "^.+\\.jsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     "moduleFileExtensions": [
         "ts",
-        "tsx",
-        "js",
-        "jsx",
-        "json",
-        "node"
+        "js"
     ],
     "moduleDirectories": [
         "node_modules",
         "src"
     ],
     "collectCoverage": true,
-    "coverageReporters": ["lcov"],
-    "transformIgnorePatterns": ["<rootDir>/node_modules/"],
+    "coverageReporters": ["lcov"]
 }
