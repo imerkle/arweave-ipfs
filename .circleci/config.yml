@@ -4,6 +4,10 @@
 #
 version: 2.1
   
+
+orbs:
+  codecov: codecov/codecov@1.0.4
+
 workflows:
   version: 2
   main:
@@ -41,5 +45,5 @@ jobs:
 
       # run tests!
       - run: yarn run test
-      - run: yarn run report
-      
+      - codecov/upload:
+          file: coverage/*.json      
