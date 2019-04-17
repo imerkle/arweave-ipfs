@@ -1,8 +1,6 @@
 
 import { sendOptionsType, RB, config } from "./constants"
 import {getNetwork} from './utils';
-export * from "./constants";
-export * from "./utils";
 
 import * as btc from "./coins/btc";
 import * as eth from "./coins/eth";
@@ -92,6 +90,7 @@ export const send = async (
         case "ETH":
         case "VET":
           // options.gasLimit *= 1000000000;
+          
           options.gasPrice *= 1000000000;
           if (rb.rel == rb.base) {
             txid = await G_IMPORT[rb.base.toLowerCase()].send({ rb, from, address, amount, options });
