@@ -1,7 +1,8 @@
 
 import { sendOptionsType, RB, config } from "./constants"
 import {getNetwork} from './utils';
-
+export * from "./constants";
+export * from "./utils";
 
 import * as btc from "./coins/btc";
 import * as eth from "./coins/eth";

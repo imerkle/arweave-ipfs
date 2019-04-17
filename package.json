@@ -27,6 +27,7 @@
     "ripple-sign-keypairs": "^1.0.2",
     "stellar-base": "^0.13.0",
     "thor-devkit": "https://github.com/imerkle/thor-devkit.js.git",
+    "wallet-address-validator": "^0.2.4",
     "wif": "^2.0.6"
   },
   "peerDependencies": {

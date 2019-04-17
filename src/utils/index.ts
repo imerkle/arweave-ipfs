@@ -1,4 +1,6 @@
-import {isTestnet, config, RB, ConfigType, IAssetType} from '../constants';
+import {isTestnet, config, RB, C, ConfigType, IAssetType} from '../constants';
+import WAValidator from "wallet-address-validator";
+
 const coininfo = require('coininfo')
 
 export const getNetwork = (ticker: string) => {
@@ -29,4 +31,16 @@ export const toBitcoinJS = (o) => {
         scriptHash: o.versions.scripthash,
         wif: o.versions.private,
         dustThreshold: null};
+};
+
+export const isValidAddress = (config: C, address: string, rb: RB): boolean => {
+    if(rb.base == "VET"){
+        rb = {base: "ETH", rel: "ETH" }
+    }
+    let networkType = `prod`;
+    if (isTestnet) {
+        networkType = `testnet`;
+    }
+    if (WAValidator.validate(address, config[rb.base].hasOwnProperty("assets") ? rb.base: rb.rel, networkType)) return true;
+    return false;
 };
