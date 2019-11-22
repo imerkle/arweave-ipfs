@@ -1,5 +1,5 @@
 {
-  "name": "hornbill",
+  "name": "arweave-ipfs",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
@@ -10,28 +10,10 @@
     "clean": "rimraf ./node_modules/js-xdr/src"
   },
   "dependencies": {
-    "@cityofzion/neon-api": "^4.4.0",
-    "@cityofzion/neon-core": "^4.4.0",
-    "@ont-community/hdkey-secp256r1": "^1.0.1",
-    "big.js": "^5.2.2",
-    "bip39": "^3.0.1",
-    "bitcoinjs-lib": "https://github.com/imerkle/bitcoinjs-lib.git",
-    "coininfo": "^4.4.1",
-    "eosjs": "^20.0.0",
-    "eosjs-ecc": "^4.0.4",
-    "ethers": "^4.0.27",
-    "hdkey": "^1.1.1",
-    "nanocurrency": "^2.3.0",
-    "qs": "^6.7.0",
-    "ripple-keypairs": "^0.11.0",
-    "ripple-sign-keypairs": "^1.0.2",
-    "stellar-base": "^0.13.0",
-    "thor-devkit": "https://github.com/imerkle/thor-devkit.js.git",
-    "wallet-address-validator": "^0.2.4",
-    "wif": "^2.0.6"
-  },
-  "peerDependencies": {
-    "axios": "^0.18.0"
+    "arweave": "^1.6.0",
+    "buffer-to-uint8array": "^1.1.0",
+    "ipfs-http-client-lite": "^0.3.0",
+    "is-ipfs": "^0.6.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",

@@ -1,107 +1,116 @@
+// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
+// import "core-js/fn/array.find"
+// ...
+import { ApiConfig } from 'arweave/web/lib/api'
+var tou8 = require('buffer-to-uint8array')
 
-import { sendOptionsType, RB, config } from "./constants"
-import {getNetwork} from './utils';
+const IpfsHttpClientLite = require('ipfs-http-client-lite')
+const Arweave = require('arweave/node')
+const isIPFS = require('is-ipfs')
 
-import * as btc from "./coins/btc";
-import * as eth from "./coins/eth";
-import * as nano from "./coins/nano";
-import * as neo from "./coins/neo";
-import * as vet from "./coins/vet";
-import * as xrp from "./coins/xrp";
-import * as eos from "./coins/eos";
-import * as xlm from "./coins/xlm";
+const IPFS_KEY = 'IPFS-Add-Test'
 
-const bip39 = require('bip39')
+type HashWithIds = { [key: string]: string }
+type Uint8A = any
 
-const G_IMPORT = {btc, eth, neo, nano, vet, xrp, eos, xlm};
-
-const HDKey = require('hdkey')
-const HDKeyr = require('@ont-community/hdkey-secp256r1')
-const HDKeyEd = require("./_hdkey_ed25519");
-
-
-export const generateSeed = async (_mnemonic?: string, passphrase: string = "", options?: any) => {
-  const mnemonic = _mnemonic ? _mnemonic : bip39.generateMnemonic(256);
-  const seed = await bip39.mnemonicToSeed(mnemonic, passphrase);
-  return { seed, mnemonic };
-};
-
-
-  /*
-  https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#Change
-  */
-export const generatePKey = (
-    rb: RB,
-    seed: Buffer,
-    account: number = 0,
-    change: number = 0,
-    index: number = 0,
-  ) => {
-    const rootNode = getRootNode(seed, rb);
-    const childNode = getChildNode(rootNode, account, change, index, rb);
-    const { wif, address, publicKey } = G_IMPORT[rb.base.toLowerCase()].getWallet({ childNode, rb });
-
-    return { wif, address, publicKey };
-  };
-
-export const getRootNode = (seed: any, rb: RB) => {
-  let rootNode;
-  switch (rb.base) {
-    case "NEO":
-      rootNode = HDKeyr.fromMasterSeed(seed)
-      break;
-    case "NANO":
-      rootNode = seed.slice(0, 32).toString("hex");
-      break;
-    case "BTC":
-      const network = getNetwork(rb.rel);
-      rootNode = HDKey.fromMasterSeed(seed, network.bip32)
-    break;
-    case "XLM":
-      rootNode = HDKeyEd.fromMasterSeed(seed)
-    break;
-    default:
-      rootNode = HDKey.fromMasterSeed(seed)
-    break;
+export default class ArweaveIpfs {
+  arweave: any
+  ipfs: any
+  constructor(
+    ipfs_opts: any = { host: 'ipfs.infura.io', port: 5001, protocol: 'https' },
+    arweave_opts: ApiConfig = { host: 'arweave.net', port: 443, protocol: 'https' }
+  ) {
+    this.arweave = Arweave.init(arweave_opts)
+    this.ipfs = IpfsHttpClientLite(`${ipfs_opts.protocol}://${ipfs_opts.host}:${ipfs_opts.port}`)
   }
-  return rootNode;
-};
-export const getChildNode = (
-  rootNode: any,
-  account: number,
-  change: number,
-  index: number,
-  rb: RB,
-) => {
-  const networkCode = config[rb.rel].code;
-  const bip44path = `m/44'/${networkCode}'/${account}'/${change}/${index}`;
-  return typeof rootNode == "object" ? rootNode.derive(bip44path) : rootNode;
-};
-
-export const send = async (
-    rb: RB,
-    from: string,
-    address: string,
-    amount: number,
-    options?: sendOptionsType,
-  ): Promise<string> => {
-      let txid;
-      switch (rb.base) {
-        case "ETH":
-        case "VET":
-          // options.gasLimit *= 1000000000;
-          
-          options.gasPrice *= 1000000000;
-          if (rb.rel == rb.base) {
-            txid = await G_IMPORT[rb.base.toLowerCase()].send({ rb, from, address, amount, options });
+  add = async (
+    hashes: Array<string> | string | Array<object>,
+    jwk: any,
+    skipArFetch = false
+  ): Promise<HashWithIds> => {
+    if (typeof hashes == 'string') {
+      hashes = [hashes]
+    }
+    let refinedHashes: Array<string>
+    if (typeof hashes[0] != 'string') {
+      //@ts-ignore
+      refinedHashes = hashes.map(o => o.path)
+    } else {
+      //@ts-ignore
+      refinedHashes = hashes
+    }
+    let arIds: Array<string> = Array(hashes.length).fill(null)
+    if (!skipArFetch) {
+      arIds = await this.getArIdFromHashes(refinedHashes)
+    }
+    let x = await Promise.all(
+      refinedHashes.map(async (o, i) => {
+        if (arIds[i] == null) {
+          return await this.addHash(o, jwk)
+        } else {
+          return makeHashWithIds(o, arIds[i])
+        }
+      })
+    )
+    return Object.assign({}, ...x)
+  }
+  get = async (hashes: Array<string> | string, jwk: any = null): Promise<Uint8A> => {
+    if (typeof hashes == 'string') {
+      hashes = [hashes]
+    }
+    let ids = await this.getArIdFromHashes(hashes)
+    let hashToPushToAr: Array<String> = []
+    let x = Promise.all(
+      ids.map(async (o, i) => {
+        if (o != null) {
+          let tx = await this.arweave.transactions.get(o)
+          return tx.get('data', { decode: true })
+        } else {
+          hashToPushToAr.push(hashes[i])
+          const data: Buffer = await this.ipfs.cat(hashes[i])
+          return tou8(data)
+        }
+      })
+    )
+    if (jwk && hashToPushToAr.length > 0) {
+      let y = await this.add(hashToPushToAr, jwk, true)
+    }
+    return x
+  }
+  getArIdFromHashes = async (hashes: Array<string>): Promise<Array<string>> => {
+    return Promise.all(
+      hashes.map(async o => {
+        if (isIPFS.multihash(o)) {
+          let x = await this.arweave.arql({
+            op: 'equals',
+            expr1: IPFS_KEY,
+            expr2: o
+          })
+          if (x.length > 0) {
+            return x[0]
           } else {
-            txid = await G_IMPORT[rb.base.toLowerCase()].sendERC20({ rb, from, address, amount, options });
+            return null
           }
-          break;
-        default:
-          txid = await G_IMPORT[rb.base.toLowerCase()].send({ rb, from, address, amount, options });
-          break;
-      }
-      return txid;
-  };
+        } else {
+          return o
+        }
+      })
+    )
+  }
+  addHash = async (h: string, jwk: any): Promise<HashWithIds> => {
+    const data: Buffer = await this.ipfs.cat(h)
+    let transaction = await this.arweave.createTransaction({ data: tou8(data) }, jwk)
+    transaction.addTag(IPFS_KEY, h)
 
+    //fast blocks hack
+    const anchor_id = (await this.arweave.api.get('/tx_anchor')).data
+    transaction.last_tx = anchor_id
+
+    await this.arweave.transactions.sign(transaction, jwk)
+    await this.arweave.transactions.post(transaction)
+    return makeHashWithIds(h, transaction.id)
+  }
+}
+const makeHashWithIds = (hash: string, id: string): HashWithIds => {
+  return { [hash]: id }
+}
