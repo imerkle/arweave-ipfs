@@ -34,6 +34,9 @@ describe('IPFS test', () => {
     ).toEqual([null, '1U5kug5cr6j7vBt71FJYNLDFmqliUMm_1BCG6fjLSW8'])
 
     let u8_ar = (await ar.get('QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y', jwk))["QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y"];
+    let u8_ar2 = (await ar.get('Fyguyp8lnuRo1iH_1joDyAEtLdnhQf1733b4mBxGKsM', jwk))["Fyguyp8lnuRo1iH_1joDyAEtLdnhQf1733b4mBxGKsM"];
+    
+    expect(u8_ar).toEqual(u8_ar2)
     expect(u8_ar[0]).toEqual(137)
     expect(u8_ar[3]).toEqual(71)
     expect(u8_ar[5]).toEqual(10)
