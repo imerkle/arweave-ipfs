@@ -4,10 +4,9 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "test": "yarn run clean && NODE_ENV=test jest",
+    "test": "jest",
     "build": "tsc -p ./tsconfig.prod.json",
-    "prepare": "yarn run build",
-    "clean": "rimraf ./node_modules/js-xdr/src"
+    "prepare": "yarn run build"
   },
   "dependencies": {
     "arweave": "^1.6.0",

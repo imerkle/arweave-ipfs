@@ -23,7 +23,7 @@ describe('IPFS test', () => {
   it('Basic Tests', async () => {
     let ar = new ArweaveIpfs()
     expect(await ar.add('Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a', jwk)).toEqual({
-      Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a: '2xcXpy-LsguajfTGRCcuh6FzrgCO96bS0be3kvGAWaY'
+      Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a: '1U5kug5cr6j7vBt71FJYNLDFmqliUMm_1BCG6fjLSW8'
     })
 
     expect(
@@ -31,7 +31,7 @@ describe('IPFS test', () => {
         'Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2b',
         'Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a'
       ])
-    ).toEqual([null, '2xcXpy-LsguajfTGRCcuh6FzrgCO96bS0be3kvGAWaY'])
+    ).toEqual([null, '1U5kug5cr6j7vBt71FJYNLDFmqliUMm_1BCG6fjLSW8'])
 
     let u8_ar = (await ar.get('QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y', jwk))["QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y"];
     expect(u8_ar[0]).toEqual(137)
