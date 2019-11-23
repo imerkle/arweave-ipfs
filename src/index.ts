@@ -37,7 +37,7 @@ export default class ArweaveIpfs {
     let refinedHashes: Array<string>
     if (typeof hashes[0] != 'string') {
       //@ts-ignore
-      refinedHashes = hashes.map(o => o.path)
+      refinedHashes = hashes.map(o => o.hash)
     } else {
       //@ts-ignore
       refinedHashes = hashes
