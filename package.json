@@ -6,7 +6,7 @@
   "scripts": {
     "test": "yarn run clean && NODE_ENV=test jest",
     "build": "tsc -p ./tsconfig.prod.json",
-    "prepare": "npm run build",
+    "prepare": "yarn run build",
     "clean": "rimraf ./node_modules/js-xdr/src"
   },
   "dependencies": {
