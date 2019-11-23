@@ -22,6 +22,13 @@ var jwk = {
 describe('IPFS test', () => {
   it('Basic Tests', async () => {
     let ar = new ArweaveIpfs()
+    expect(await ar.add([{
+      path: "",
+      hash: "Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a",
+    }], jwk)).toEqual({
+      Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a: '1U5kug5cr6j7vBt71FJYNLDFmqliUMm_1BCG6fjLSW8'
+    })
+
     expect(await ar.add('Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a', jwk)).toEqual({
       Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a: '1U5kug5cr6j7vBt71FJYNLDFmqliUMm_1BCG6fjLSW8'
     })
