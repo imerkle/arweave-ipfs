@@ -11,7 +11,6 @@ const isIPFS = require('is-ipfs')
 const IPFS_KEY = 'IPFS-Add-Test'
 
 type HashWithIds = { [key: string]: string }
-type Uint8A = any
 
 export default class ArweaveIpfs {
   arweave: any
@@ -28,7 +27,7 @@ export default class ArweaveIpfs {
     jwk: any,
     skipArFetch = false
   ): Promise<HashWithIds> => {
-    if (typeof hashes == 'string') {
+    if (!Array.isArray(hashes)) {
       hashes = [hashes]
     }
     let refinedHashes: Array<string>
@@ -54,28 +53,29 @@ export default class ArweaveIpfs {
     )
     return Object.assign({}, ...x)
   }
-  get = async (hashes: Array<string> | string, jwk: any = null): Promise<Uint8A> => {
+  get = async (hashes: Array<string> | string, jwk: any = null): Promise<any> => {
     if (typeof hashes == 'string') {
       hashes = [hashes]
     }
     let ids = await this.getArIdFromHashes(hashes)
     let hashToPushToAr: Array<String> = []
-    let x = Promise.all(
+    let x = await Promise.all(
       ids.map(async (o, i) => {
+        let h = hashes[i];
         if (o != null) {
           let tx = await this.arweave.transactions.get(o)
-          return tx.get('data', { decode: true })
+          return {[h]: Array.from(tx.get('data', { decode: true })) }
         } else {
-          hashToPushToAr.push(hashes[i])
-          const data: Buffer = await this.ipfs.cat(hashes[i])
-          return tou8(data)
+          hashToPushToAr.push(h)
+          const data: Buffer = await this.ipfs.cat(h)
+          return {[h]: Array.from(tou8(data)) }
         }
       })
     )
     if (jwk && hashToPushToAr.length > 0) {
-      let y = await this.add(hashToPushToAr, jwk, true)
+      this.add(hashToPushToAr, jwk, true)
     }
-    return x
+    return Object.assign({}, ...x)
   }
   getArIdFromHashes = async (hashes: Array<string>): Promise<Array<string>> => {
     return Promise.all(
@@ -98,6 +98,9 @@ export default class ArweaveIpfs {
     )
   }
   addHash = async (h: string, jwk: any): Promise<HashWithIds> => {
+    if (!isIPFS.multihash(h)) {
+      return makeHashWithIds(h, "Invalid IPFS hash");
+    }
     const data: Buffer = await this.ipfs.cat(h)
     let transaction = await this.arweave.createTransaction({ data: tou8(data) }, jwk)
     transaction.addTag(IPFS_KEY, h)
