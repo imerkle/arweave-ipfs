@@ -8,7 +8,11 @@ const IpfsHttpClientLite = require('ipfs-http-client-lite')
 const Arweave = require('arweave/node')
 const isIPFS = require('is-ipfs')
 
-const IPFS_KEY = 'IPFS-Add-Test'
+const IPFS_KEY = 'IPFS-Add'
+
+//temporary so it doesnt conflict with different data structure
+const IPFS_CONSTRAINT_KEY = 'standard'
+const IPFS_CONSTRAINT = 'v0.1'
 
 type HashWithIds = { [key: string]: string }
 
@@ -81,11 +85,20 @@ export default class ArweaveIpfs {
     return Promise.all(
       hashes.map(async o => {
         if (isIPFS.multihash(o)) {
-          let x = await this.arweave.arql({
-            op: 'equals',
-            expr1: IPFS_KEY,
-            expr2: o
-          })
+          let x = await this.arweave.arql(
+            {op: "and",
+              expr1: {
+                op: 'equals',
+                expr1: IPFS_KEY,
+                expr2: o
+              },
+              expr2: {
+                op: 'equals',
+                expr1: IPFS_CONSTRAINT_KEY,
+                expr2: IPFS_CONSTRAINT
+              }
+            }
+          )
           if (x.length > 0) {
             return x[0]
           } else {
@@ -104,6 +117,7 @@ export default class ArweaveIpfs {
     const data: Buffer = await this.ipfs.cat(h)
     let transaction = await this.arweave.createTransaction({ data: tou8(data) }, jwk)
     transaction.addTag(IPFS_KEY, h)
+    transaction.addTag(IPFS_CONSTRAINT_KEY, IPFS_CONSTRAINT)
 
     //fast blocks hack
     const anchor_id = (await this.arweave.api.get('/tx_anchor')).data
