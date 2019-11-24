@@ -112,3 +112,8 @@ For more details see [documentation](https://arweave.net/quKGogRQdoygnckHV0vj_oT
 # Arweave-IPFS Server
 
 If you want to provide a centralized service where users would be able to upload ipfs hashes into permaweb without requiring arweave keyfile then take a look at [arweave-ipfs-server](https://github.com/imerkle/arweave-ipfs-server)
+
+# Arweave-IPFS Explorer
+
+Also take a look at [arweave-ipfs-explorer](https://github.com/imerkle/arweave-ipfs-explorer) for a live example of how to use the data.
+
