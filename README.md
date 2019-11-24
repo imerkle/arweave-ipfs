@@ -54,7 +54,9 @@ const arweave_result = await ar.add(results);
 
 ##### add
 
-`add` takes ipfs hashes and returns the respective arweave txid it's stores the file contents of the hashes. It also does additional checks to ensure same data is not stored multiple times.
+`add` takes ipfs hashes, stores the raw bytes of files and returns the respective arweave txid. It also does additional checks to ensure same data is not stored multiple times.
+
+###### Note: `jwk` is the json of arweave wallet keyfile see [arweave docs](https://github.com/ArweaveTeam/arweave-js#create-a-new-wallet-and-private-key) for more info
 
 ```js
 const results = await ar.add("Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a", jwk);
@@ -107,3 +109,6 @@ const result = await ar.get("Qm...notinarweavehash", jwk)
 
 For more details see [documentation](https://arweave.net/9YaMnKhESn4MUNJcQwNSPG2Xp8Myj4_abxJ9tA3gODw) or generate locally using `typedoc --out docs src` in project root.
 
+# Arweave-IPFS Server
+
+If you want to provide a centralized service where users would be able to upload ipfs hashes into permaweb without requiring arweave keyfile then take a look at [arweave-ipfs-server](https://github.com/imerkle/arweave-ipfs-server)
