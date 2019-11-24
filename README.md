@@ -107,7 +107,7 @@ The `results` array:
 const result = await ar.get("Qm...notinarweavehash", jwk)
 ```
 
-For more details see [documentation](https://arweave.net/9YaMnKhESn4MUNJcQwNSPG2Xp8Myj4_abxJ9tA3gODw) or generate locally using `typedoc --out docs src` in project root.
+For more details see [documentation](https://arweave.net/quKGogRQdoygnckHV0vj_oTfIIRjnn-fETBfQT9kWX4) or generate locally using `typedoc --out docs src` in project root.
 
 # Arweave-IPFS Server
 
