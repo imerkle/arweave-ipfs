@@ -86,7 +86,7 @@ const results = await ar.get("Qmx...");
 // or
 const results = await ar.get(["Qmx...", "Qmy..."]);
 // it also accepts arweave tx ids
-const results = await ar.get(["1U5..."]);
+const results = await ar.get(["1U5...", "Qmx..."]);
 
 ```
 
