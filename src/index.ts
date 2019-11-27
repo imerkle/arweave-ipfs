@@ -5,9 +5,14 @@ import { ApiConfig } from 'arweave/web/lib/api'
 var tou8 = require('buffer-to-uint8array')
 
 const IpfsHttpClientLite = require('ipfs-http-client-lite')
-const Arweave = require('arweave/node')
 const isIPFS = require('is-ipfs')
-
+let Arweave;
+function isNodejs() { return typeof process === 'object' && typeof process.versions === 'object' && typeof process.versions.node !== 'undefined'; }
+if (isNodejs()) {
+  Arweave = require('arweave/node')
+} else {
+  Arweave = require('arweave/web')
+}
 const IPFS_KEY = 'IPFS-Add'
 
 //temporary so it doesnt conflict with different data structure
@@ -15,6 +20,7 @@ const IPFS_CONSTRAINT_KEY = 'standard'
 const IPFS_CONSTRAINT = 'v0.1'
 
 type HashWithIds = { [key: string]: string }
+
 
 export default class ArweaveIpfs {
   arweave: any
@@ -68,11 +74,11 @@ export default class ArweaveIpfs {
         let h = hashes[i];
         if (o != null) {
           let tx = await this.arweave.transactions.get(o)
-          return {[h]: Array.from(tx.get('data', { decode: true })) }
+          return { [h]: Array.from(tx.get('data', { decode: true })) }
         } else {
           hashToPushToAr.push(h)
           const data: Buffer = await this.ipfs.cat(h)
-          return {[h]: Array.from(tou8(data)) }
+          return { [h]: Array.from(tou8(data)) }
         }
       })
     )
@@ -86,7 +92,8 @@ export default class ArweaveIpfs {
       hashes.map(async o => {
         if (isIPFS.multihash(o)) {
           let x = await this.arweave.arql(
-            {op: "and",
+            {
+              op: "and",
               expr1: {
                 op: 'equals',
                 expr1: IPFS_KEY,
