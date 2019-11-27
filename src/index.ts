@@ -11,7 +11,7 @@ function isNodejs() { return typeof process === 'object' && typeof process.versi
 if (isNodejs()) {
   Arweave = require('arweave/node')
 } else {
-  Arweave = require('arweave/web')
+  Arweave = require('arweave/web').default
 }
 const IPFS_KEY = 'IPFS-Add'
 
