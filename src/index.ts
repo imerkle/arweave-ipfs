@@ -73,8 +73,13 @@ export default class ArweaveIpfs {
       ids.map(async (o, i) => {
         let h = hashes[i];
         if (o != null) {
-          let tx = await this.arweave.transactions.get(o)
-          return { [h]: Array.from(tx.get('data', { decode: true })) }
+          try {
+            let tx = await this.arweave.transactions.get(o)
+            return { [h]: Array.from(tx.get('data', { decode: true })) }
+          } catch (e) {
+            return { [h]: [] }
+            //do nothing returns undefined
+          }
         } else {
           hashToPushToAr.push(h)
           const data: Buffer = await this.ipfs.cat(h)
