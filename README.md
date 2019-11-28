@@ -115,5 +115,4 @@ If you want to provide a centralized service where users would be able to upload
 
 # Arweave-IPFS Explorer
 
-Also take a look at [arweave-ipfs-explorer](https://github.com/imerkle/arweave-ipfs-explorer) for a live example of how to use the data.
-
+[arweave-ipfs-explorer](https://github.com/imerkle/arweave-ipfs-explorer) is an easy to use permaweb dapp that uses [arweave-ipfs](https://github.com/imerkle/arweave-ipfs) and[arweave-ipfs-server](https://github.com/imerkle/arweave-ipfs-server) to display and store ipfs hashes into blockchain.
