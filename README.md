@@ -4,6 +4,12 @@
 
 This library is written closely to the official ipfs js library and provides easy integration with existing ipfs apps to permapin their data in arweave.
 
+## Features 
+
+- Checks for duplicate hashes before pinning 
+- Supports multiple hashes in one request 
+- Native library with no dependency on centralized servers 
+- Highly customizable options
 
 ## Install
 
