@@ -16,8 +16,8 @@ This prject contains three repos:
 
 If you just want to see it in action:
 
-[https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY](Server-Less -  Requires a wallet doesn't depends on any central service)
-[https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg](Server-Backed -  Does not requires any wallet)
+[Server-Less -  Requires a wallet doesn't depends on any central service](https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY)
+[Server-Backed -  Does not requires any wallet](https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg)
 
 
 It also displays/downloads the content you have uploaded , just add `#/your-ipfs-hash` at end of url
