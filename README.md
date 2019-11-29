@@ -38,7 +38,6 @@ It also displays/downloads the content you have uploaded , just add `#/your-ipfs
 - Native library with no dependency on centralized servers 
 - Highly customizable options
 - Cross Compatibility with both client and server side js
-- 
 
 ## Install
 
