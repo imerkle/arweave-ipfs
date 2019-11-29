@@ -4,6 +4,30 @@
 
 This library is written closely to the official ipfs js library and provides easy integration with existing ipfs apps to permapin their data in arweave.
 
+## IPFS+Arweave Hackathon
+
+This project is part of IPFS+Arweave Hackathon:-
+
+This prject contains three repos:
+ - (arweave-ipfs)[https://github.com/imerkle/arweave-ipfs] - Cross-Compatible (js client & node server) library to easily integrate IPFS+Arweave in your apps.
+ - (arweave-ipfs-server)[https://github.com/imerkle/arweave-ipfs-server] - Centralized server for running IPFS-Arweave service
+ - (arweave-ipfs-explorer)[https://github.com/imerkle/arweave-ipfs-explorer] - Interactive GUI to get and post ipfs hashes
+
+
+If you just want to see it in action:
+
+(https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY)[Server-Less -  Requires a wallet doesn't depends on any central service]
+(https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg)[Server-Backed -  Does not requires any wallet]
+
+
+It also displays/downloads the content you have uploaded , just add `#/your-ipfs-hash` at end of url
+
+https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY#QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y
+https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY#Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a
+
+https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg#QmQeEyDPA47GqnduyVVWNdnj6UBPXYPVWogAQoqmAcLx6y
+https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg#Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a
+
 ## Features 
 
 - Checks for duplicate hashes before pinning 
