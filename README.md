@@ -106,7 +106,7 @@ The `results` array:
 
 `add` also accepts array of hashes
 ```
-const result = await ar.add(["Qmy...", "Qmx.."]);
+const result = await ar.add(["Qmy...", "Qmx.."], jwk);
 ```
 
 #### get
