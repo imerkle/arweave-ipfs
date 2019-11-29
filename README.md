@@ -10,6 +10,7 @@ This library is written closely to the official ipfs js library and provides eas
 - Supports multiple hashes in one request 
 - Native library with no dependency on centralized servers 
 - Highly customizable options
+- Cross Compatibility with both client and server side js
 
 ## Install
 
