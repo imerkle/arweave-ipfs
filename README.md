@@ -17,7 +17,7 @@ This project contains three repos:
 If you just want to see it in action:
 
 [Server-Less](https://arweave.net/5ljkBHQs2m4JLag-U51YEdG45rvhmO_NYENl7t8umrY) 
-> Requires a wallet doesn't depends on any central service
+> Requires a wallet doesn't depends on any central service, it's permanently available on internet as long as IPFS & Arweave nodes exists
 
 [Server-Backed](https://arweave.net/-L0hP1RghjcaN6LAsy3s-YlbtjEJYUOvos11lb4X1Tg) 
 > Does not requires any wallet, automatically pins ipfs hashes not existing in arweave even if you're just viewing them.
