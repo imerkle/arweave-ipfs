@@ -8,7 +8,7 @@ This library is written closely to the official ipfs js library and provides eas
 
 This project is part of IPFS+Arweave Hackathon:-
 
-This prject contains three repos:
+This project contains three repos:
  - [arweave-ipfs](https://github.com/imerkle/arweave-ipfs) - Cross-Compatible (js client & node server) library to easily integrate IPFS+Arweave in your apps.
  - [arweave-ipfs-server](https://github.com/imerkle/arweave-ipfs-server) - Centralized server for running IPFS-Arweave service
  - [arweave-ipfs-explorer](https://github.com/imerkle/arweave-ipfs-explorer) - Interactive GUI to get and post ipfs hashes
